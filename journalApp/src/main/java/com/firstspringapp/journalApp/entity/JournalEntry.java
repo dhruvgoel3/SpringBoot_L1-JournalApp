@@ -1,8 +1,10 @@
 package com.firstspringapp.journalApp.entity;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 import org.bson.types.ObjectId;
+import org.springframework.cglib.core.Local;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -12,13 +14,13 @@ public class JournalEntry {
     private ObjectId id;
     private String title;
     private String content;
-    private Date date;
+    private LocalDateTime date;
 
-    public Date getDate() {
+    public LocalDateTime getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(LocalDateTime date) {
         this.date = date;
     }
 

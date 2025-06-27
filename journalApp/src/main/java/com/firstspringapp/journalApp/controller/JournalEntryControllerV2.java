@@ -9,10 +9,10 @@ import org.springframework.web.bind.annotation.RestController;
 import com.firstspringapp.journalApp.entity.JournalEntry;
 import com.firstspringapp.journalApp.service.JournalEntryService;
 
+import java.time.LocalDateTime;
 import java.util.*;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
 
 @RestController
 @RequestMapping("/journal")
@@ -28,6 +28,7 @@ public class JournalEntryControllerV2 {
 
     @PostMapping
     public boolean createEntry(@RequestBody JournalEntry myEntry) {
+        myEntry.setDate(LocalDateTime.now());
         journalEntryService.saveEntry(myEntry);
         return true;
 
