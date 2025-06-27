@@ -1,14 +1,15 @@
 package com.firstspringapp.journalApp.entity;
 
-import java.util.Date; 
+import java.util.Date;
 
+import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collation = "journal_entries")
 public class JournalEntry {
     @Id
-    private String id;
+    private ObjectId id;
     private String title;
     private String content;
     private Date date;
@@ -21,12 +22,12 @@ public class JournalEntry {
         this.date = date;
     }
 
-    public String getId() {
+    public ObjectId getId() {
         return id;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public ObjectId setId(ObjectId id) {
+        return id;
     }
 
     public String getTitle() {

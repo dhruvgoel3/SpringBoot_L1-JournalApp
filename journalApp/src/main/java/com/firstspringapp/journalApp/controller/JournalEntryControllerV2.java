@@ -12,22 +12,23 @@ import com.firstspringapp.journalApp.service.JournalEntryService;
 import java.util.*;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @RestController
 @RequestMapping("/journal")
 public class JournalEntryControllerV2 {
 
     @Autowired
-    private JournalEntryService dhruvKiServiceFile;
+    private JournalEntryService journalEntryService;
 
-    @GetMapping("/get-all")
-    public List<JournalEntry> getAll() {
-        return dhruvKiServiceFile.getAllJournal(); 
+    @GetMapping()
+    public List<JournalEntry> allGet() {
+        return journalEntryService.getAll();
     }
 
     @PostMapping
     public boolean createEntry(@RequestBody JournalEntry myEntry) {
-        dhruvKiServiceFile.saveEntry(myEntry);
+        journalEntryService.saveEntry(myEntry);
         return true;
 
     }
@@ -41,5 +42,5 @@ public class JournalEntryControllerV2 {
 }
 // THis is copy
 
-// Best Practice is :- 
+// Best Practice is :-
 // CON

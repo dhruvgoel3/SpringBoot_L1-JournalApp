@@ -13,18 +13,12 @@ public class JournalEntryService {
     @Autowired
     private JournalEntryRepository journalEntryRepository;
 
-    public List<JournalEntry> getAllJournal(){
-        List<JournalEntry> result =  journalEntryRepository.findAll();
-        System.out.println(result);
-        return result;
-    }
-
-    public void saveEntry(JournalEntry journalEntry)
-    {
+    public void saveEntry(JournalEntry journalEntry) {
         journalEntryRepository.save(journalEntry);
 
     }
+    public List<JournalEntry> getAll()
+    {
+        return journalEntryRepository.findAll();
+    }
 }
-
-
-
