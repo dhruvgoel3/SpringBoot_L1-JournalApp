@@ -1,7 +1,9 @@
 package com.firstspringapp.journalApp.service;
 
 import java.util.List;
+import java.util.Optional;
 
+import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,4 +23,15 @@ public class JournalEntryService {
     {
         return journalEntryRepository.findAll();
     }
+    public Optional<JournalEntry> findById(ObjectId myId)
+    {
+        return journalEntryRepository.findById(myId);
+    }
+
+    public JournalEntry deleteById(ObjectId myId)
+    {
+        return journalEntryRepository.deleteById(myId);
+    }
+
+
 }
