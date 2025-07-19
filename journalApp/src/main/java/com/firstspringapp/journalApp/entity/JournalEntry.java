@@ -21,7 +21,5 @@ public class JournalEntry {
     private String content;
     private LocalDateTime date;
 
-    
-
 }
 // This is called POJO - A simple class

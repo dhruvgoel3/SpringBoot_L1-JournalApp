@@ -43,11 +43,6 @@ public class JournalEntryControllerV2 {
 
     }
 
-    @DeleteMapping("id/{myId}")
-    public boolean deleteJournalEntrybyId(@PathVariable ObjectId myId) {
-        journalEntryService.deleteById(myId);
-        return true;
-    }
 
     @PutMapping("id/{id}")
     public JournalEntry updateJournalEntry(@PathVariable ObjectId id, @RequestBody JournalEntry myEntryn) {

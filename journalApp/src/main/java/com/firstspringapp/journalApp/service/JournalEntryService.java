@@ -28,10 +28,7 @@ public class JournalEntryService {
         return journalEntryRepository.findById(myId);
     }
 
-    public JournalEntry deleteById(ObjectId myId)
-    {
-        return journalEntryRepository.deleteById(myId);
-    }
+   
 
 
 }
