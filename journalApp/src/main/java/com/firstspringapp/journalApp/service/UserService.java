@@ -21,16 +21,16 @@ public class UserService {
 
     }
 
-    // public List<User> getAll(ObjectId Id) {
-    //     return userRepository.findById(Id);
-    // }
-
-    public Optional<User> findById(ObjectId myId) {
-        return userRepository.findById(myId);
+    public List<User> getAll(ObjectId id) {
+        return userRepository.findAll();
     }
 
-    public void deleteById(ObjectId Id) {
-        userRepository.deleteById(Id);
+    public Optional<User> findById(ObjectId id) {
+        return userRepository.findById(id);
+    }
+
+    public void deleteById(ObjectId id) {
+        userRepository.deleteById(id);
     }
 
 }
