@@ -24,13 +24,15 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @GetMapping
-    public String getMethodName(@RequestParam String param) {
-        return new String();
+    @GetMapping("/findUser")
+    public User callUser(@RequestParam String username) {
+        return userService.callUser(username);
+
     }
 
+    @GetMapping
     public List<User> getAllUsers() {
-        return userService.getAll(null);
+        return userService.getAllUsers();
     }
 
     @PostMapping

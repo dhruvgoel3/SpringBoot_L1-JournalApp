@@ -21,7 +21,14 @@ public class UserService {
 
     }
 
-    public List<User> getAll(ObjectId id) {
+    public User callUser(String username)
+    {
+        return userRepository.findByUserName(username);
+
+
+    }
+
+    public List<User> getAllUsers() {
         return userRepository.findAll();
     }
 
